@@ -27,7 +27,26 @@ public class Main {
 		Point p2 = new Point(x2, y2);
 		System.out.println(p2.toString());
 		
-		System.out.printf("The distance between the two points is: %.2f", p1.isAwayFrom(p2));
-	}
+		System.out.printf("The distance between the two points is: %.2f \n", p1.isAwayFrom(p2));
+		
+		System.out.println("The equation of the line passing through this two points is:");
+		Line line = new Line(p1, p2);
+		System.out.println(line.toString());
+		
+		System.out.println("Now insert a third point:");
+		int x3, y3;
+		System.out.println("--- Point 3 ---");
+		System.out.print("Coordinate x: ");
+		x3 = in.nextInt();
+		System.out.print("Coordinate y: ");
+		y3 = in.nextInt();
+		Point p3 = new Point(x3, y3);
+		System.out.println(p3.toString());
 
+		if(line.belongs(p3)) {
+			System.out.println("The third point belongs to the line.");
+		} else {
+			System.out.println("The third point doesn't belong to the line.");
+		}
+	}
 }
