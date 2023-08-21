@@ -4,7 +4,7 @@ public class Line {
 	
 	/*
 	 * I will define a straight line with the equation: y = m * x + q.
-	 * Where the m is the gradient ind the q is the height at witch the line cross the y-axis.
+	 * Where the m is the gradient and the q is the height at witch the line cross the y-axis.
 	 */
 	private float gradient;
 	private float yIntercept;
