@@ -1,5 +1,7 @@
 package en.lonelyhearts;
 
+import java.util.Objects;
+
 public class LonelyHeart {
 	
 	private String name;
@@ -31,9 +33,20 @@ public class LonelyHeart {
 		this.gender = gender;
 	}
 	
-	public Boolean itIsRelated() {
-	return true;	
+	
+	private Boolean sameGender(LonelyHeart lonelyHeart) {
+		if (gender.equals(lonelyHeart.getGender())) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
-	
+	public Boolean isCompatibleWith(LonelyHeart lonelyHeart) {
+		if (age - lonelyHeart.getAge() <= 5 && sameGender(lonelyHeart) == false) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
