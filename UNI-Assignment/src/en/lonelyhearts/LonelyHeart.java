@@ -42,6 +42,11 @@ public class LonelyHeart {
 		}
 	}
 	
+	@Override
+	public String toString() {
+		return "LonelyHeart [name=" + name + ", age=" + age + ", gender=" + gender + "]";
+	}
+
 	public Boolean isCompatibleWith(LonelyHeart lonelyHeart) {
 		if (age - lonelyHeart.getAge() <= 5 && sameGender(lonelyHeart) == false) {
 			return true;

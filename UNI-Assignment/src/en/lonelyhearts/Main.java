@@ -32,6 +32,8 @@ public class Main {
 		System.out.println(ENTER_GENDER);
 		gender1 = in.next();
 		LonelyHeart LH1 = new LonelyHeart(name1, age1, gender1);
+		System.out.println(LH1.toString());
+		
 		
 		System.out.println(ENTER_SECOND_LONELY_HERAT);
 		System.out.println(ENTER_NAME);
@@ -41,6 +43,7 @@ public class Main {
 		System.out.println(ENTER_GENDER);
 		gender2 = in.next();
 		LonelyHeart LH2 = new LonelyHeart(name2, age2, gender2);
+		System.out.println(LH2.toString());
 
 		if (LH1.isCompatibleWith(LH2) == true) {
 			System.out.println(COMPATIBLE);
