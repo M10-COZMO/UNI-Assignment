@@ -4,48 +4,62 @@ import java.util.Scanner;
 
 public class Main {
 	
+	private static final String INVALID_INPUT_AGE = "Invalid input, you must insert a age between 18 and 120.";
+	private static final String INVALID_INPUT_NAME = "Invalid input, you must insert a name.";
+	private static final String INVALID_INPUT_GENDER = "Invalid input, insert M o F.";
 	private static final String NOT_COMPATIBLE = "They are not compatible";
 	private static final String COMPATIBLE = "They are compatible";
 	private static final String GREETING = "Welcome in Lonely Hearts, ere you can know if two people are compatible";
-	private static final String ENTER_FIRST_LONELY_HERAT = "Enter the data of the first Lonely Heart: ";
-	private static final String ENTER_SECOND_LONELY_HERAT = "Enter the data of the second Lonely Heart: ";
+	private static final String ENTER_LONELY_HERAT = "Enter lonely heart data: ";
 	private static final String ENTER_NAME = "Enter the name: ";
 	private static final String ENTER_AGE = "Enter the age: ";
 	private static final String ENTER_GENDER = "Enter the gender (M/F): ";
+	private static final String MALE = "M";
+	private static final String FEMALE = "F";
 	
-	public static void main(String[] args) {
-		
-		String name1, name2;
-		int age1, age2;
-		String gender1, gender2;
-		
+	public static void generateLonelyHeart(LonelyHeart lh) {
+		String name;
+		int age;
+		String gender;
 		Scanner in = new Scanner(System.in);
-		
 		
 		System.out.println(GREETING);
 		
-		System.out.println(ENTER_FIRST_LONELY_HERAT);
+		System.out.println(ENTER_LONELY_HERAT);
 		System.out.println(ENTER_NAME);
-		name1 = in.next();
-		System.out.println(ENTER_AGE);
-		age1 = in.nextInt();
-		System.out.println(ENTER_GENDER);
-		gender1 = in.next();
-		LonelyHeart LH1 = new LonelyHeart(name1, age1, gender1);
-		System.out.println(LH1.toString());
+		name = in.next();
+		lh.setName(name);
 		
-		
-		System.out.println(ENTER_SECOND_LONELY_HERAT);
-		System.out.println(ENTER_NAME);
-		name2 = in.next();
 		System.out.println(ENTER_AGE);
-		age2 = in.nextInt();
+		age = in.nextInt();
+		while(age <= 18 || age >= 120) {
+			System.out.println(INVALID_INPUT_AGE);
+			age = in.nextInt();
+		}
+		lh.setAge(age);
+		
 		System.out.println(ENTER_GENDER);
-		gender2 = in.next();
-		LonelyHeart LH2 = new LonelyHeart(name2, age2, gender2);
-		System.out.println(LH2.toString());
+		gender = in.next();
+		while(gender.equals(MALE)|| gender.compareTo(FEMALE) != 0) {
+			System.out.println(INVALID_INPUT_GENDER);
+			gender = in.next();
+		}
+		lh.setGender(gender);
+		
+	}
+	public static void main(String[] args) {
+	
+		LonelyHeart lh1 = new LonelyHeart();
+		LonelyHeart lh2 = new LonelyHeart();
+		
+		generateLonelyHeart(lh1);
+		generateLonelyHeart(lh2);
+		
+		System.out.println(lh1.toString());
+		System.out.println(lh2.toString());
+		
 
-		if (LH1.isCompatibleWith(LH2) == true) {
+		if (lh1.isCompatibleWith(lh2) == true) {
 			System.out.println(COMPATIBLE);
 		} else {
 			System.out.println(NOT_COMPATIBLE);

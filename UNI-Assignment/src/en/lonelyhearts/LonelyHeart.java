@@ -14,6 +14,10 @@ public class LonelyHeart {
 		this.gender = _gender;
 	}
 	
+	public LonelyHeart() {
+		
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -52,6 +56,12 @@ public class LonelyHeart {
 			return true;
 		} else {
 			return false;
+		}
+	}
+	
+	public void gendereError() {
+		if(gender != "M" || gender != "F") {
+			System.out.println("Insert the character \"M\" or \"M\"");
 		}
 	}
 }
