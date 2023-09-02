@@ -19,11 +19,9 @@ public class Main {
 	
 	public static void generateLonelyHeart(LonelyHeart lh) {
 		String name;
-		int age;
+		int age, x = 0;
 		String gender;
 		Scanner in = new Scanner(System.in);
-		
-		System.out.println(GREETING);
 		
 		System.out.println(ENTER_LONELY_HERAT);
 		System.out.println(ENTER_NAME);
@@ -40,19 +38,29 @@ public class Main {
 		
 		System.out.println(ENTER_GENDER);
 		gender = in.next();
-		while(gender.equals(MALE)|| gender.compareTo(FEMALE) != 0) {
-			System.out.println(INVALID_INPUT_GENDER);
-			gender = in.next();
-		}
-		lh.setGender(gender);
-		
+		if(gender.equals("M") || gender.equals("F")) {
+			lh.setGender(gender);
+		} else {
+			while(x != 1) {
+				System.out.println(INVALID_INPUT_GENDER);
+				gender = in.next();
+				if(gender.equals("M") || gender.equals("F")) {
+					x = 1;
+					lh.setGender(gender);
+				}
+			}
+		}	
 	}
+	
 	public static void main(String[] args) {
 	
 		LonelyHeart lh1 = new LonelyHeart();
 		LonelyHeart lh2 = new LonelyHeart();
 		
+		System.out.println(GREETING);
+		System.out.println("--- First Lonely Heart ---");
 		generateLonelyHeart(lh1);
+		System.out.println("--- Second Lonely Heart ---");
 		generateLonelyHeart(lh2);
 		
 		System.out.println(lh1.toString());
