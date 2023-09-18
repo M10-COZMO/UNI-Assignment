@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 	
+	private static final String ENTER_ZODIAC_SIGN = "Enter zodiac sign";
 	private static final String INVALID_INPUT_AGE = "Invalid input, you must insert a age between 18 and 120.";
 	private static final String INVALID_INPUT_NAME = "Invalid input, you must insert a name.";
 	private static final String INVALID_INPUT_GENDER = "Invalid input, insert M o F.";
@@ -21,6 +22,7 @@ public class Main {
 		String name;
 		int age, x = 0;
 		String gender;
+		String zodiacSign;
 		Scanner in = new Scanner(System.in);
 		
 		System.out.println(ENTER_LONELY_HERAT);
@@ -49,7 +51,12 @@ public class Main {
 					lh.setGender(gender);
 				}
 			}
-		}	
+		}
+		
+		System.out.print(ENTER_ZODIAC_SIGN + " ");
+		System.out.print(java.util.Arrays.asList(ZodiacSigns.values()));
+		System.out.println(": ");
+		zodiacSign = in.next();
 	}
 	
 	public static void main(String[] args) {

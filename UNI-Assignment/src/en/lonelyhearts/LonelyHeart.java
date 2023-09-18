@@ -7,13 +7,23 @@ public class LonelyHeart {
 	private String name;
 	private int age;
 	private String gender;
+	private String zodiacSign;
 	
-	public LonelyHeart(String _name, int _age, String _gender) {
+	public LonelyHeart(String _name, int _age, String _gender, String _zodiacSign) {
 		this.name = _name;
 		this.age = _age;
 		this.gender = _gender;
+		this.zodiacSign = _zodiacSign;
 	}
 	
+	public String getZodiacSign() {
+		return zodiacSign;
+	}
+
+	public void setZodiacSign(String zodiacSign) {
+		this.zodiacSign = zodiacSign;
+	}
+
 	public LonelyHeart() {
 		
 	}
@@ -46,13 +56,21 @@ public class LonelyHeart {
 		}
 	}
 	
+	private Boolean sameZodiacSign(LonelyHeart lonelyHeart) {
+		if (zodiacSign.equals(lonelyHeart.getZodiacSign())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	@Override
 	public String toString() {
-		return "LonelyHeart [name=" + name + ", age=" + age + ", gender=" + gender + "]";
+		return "LonelyHeart [name=" + name + ", age=" + age + ", gender=" + gender + ", zodiac sign=" + zodiacSign + "]";
 	}
 
 	public Boolean isCompatibleWith(LonelyHeart lonelyHeart) {
-		if (age - lonelyHeart.getAge() <= 5 && sameGender(lonelyHeart) == false) {
+		if (age - lonelyHeart.getAge() <= 5 && sameGender(lonelyHeart) == false && sameZodiacSign(lonelyHeart) == false) {
 			return true;
 		} else {
 			return false;
