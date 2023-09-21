@@ -18,7 +18,7 @@ public class Tamagotchi {
 
 	@Override
 	public String toString() {
-		return "Tamagotchi [name=" + name + ", hungry=" + hungry + ", ove=" + love + "]";
+		return "Tamagotchi [name: " + name + ", hungry: " + hungry + ", love: " + love + "]";
 	}
 
 	public String getName() {
@@ -41,8 +41,8 @@ public class Tamagotchi {
 		return love;
 	}
 
-	public void setLove(int ove) {
-		this.love = ove;
+	public void setLove(int love) {
+		this.love = love;
 	}
 	
 	public void giveBisciuts(int numberOfGivenBisciuts) {
