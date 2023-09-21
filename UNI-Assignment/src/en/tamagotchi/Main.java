@@ -50,10 +50,16 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		
+	
 		Tamagotchi tama = new Tamagotchi();
 		generateTamagotchi(tama);
 		System.out.println(tama.toString());
+		
+		Menu menu = new Menu();
+		menu.setTitle(" ");
+		menu.addVoice("1234567890");
+		menu.addVoice("0987654321");
+		menu.printMenu();
 	}
 
 }
