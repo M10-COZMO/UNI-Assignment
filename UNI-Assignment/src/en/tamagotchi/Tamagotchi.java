@@ -4,12 +4,12 @@ public class Tamagotchi {
 	
 	private String name;
 	private int hungry;
-	private int love;
+	private int affection;
 	
-	public Tamagotchi(String _name, int _hungry, int _love) {
+	public Tamagotchi(String _name, int _hungry, int _affection) {
 		this.name = _name;
 		this.hungry = _hungry;
-		this.love = _love;
+		this.affection = _affection;
 	}
 	
 	public Tamagotchi() {
@@ -18,7 +18,8 @@ public class Tamagotchi {
 
 	@Override
 	public String toString() {
-		return "Tamagotchi [name: " + name + ", hungry: " + hungry + ", love: " + love + "]";
+		return "--------------\n(⌐■_■)\n" + "Name: " + name + "\nHungry: " + hungry + "\nAffection: " + affection;
+		//return "Tamagotchi [name: " + name + ", hungry: " + hungry + ", affection: " + affection + "]";
 	}
 
 	public String getName() {
@@ -37,22 +38,31 @@ public class Tamagotchi {
 		this.hungry = hungry;
 	}
 
-	public int getLove() {
-		return love;
+	public int getAffection() {
+		return affection;
 	}
 
-	public void setLove(int love) {
-		this.love = love;
+	public void setAffection(int affection) {
+		this.affection = affection;
 	}
 	
-	public void giveBisciuts(int numberOfGivenBisciuts) {
-		hungry = hungry + numberOfGivenBisciuts;
+	public void giveCookies(int numberOfGivenCookies) {
+		hungry = hungry + numberOfGivenCookies;
+		affection = affection - (numberOfGivenCookies / 2);
 	}
 	
-	public void giveHand(int numberOfGivenOve) {
-		love = love + numberOfGivenOve;
+	public void giveHand(int numberOfGivenCaresses) {
+		affection = affection + numberOfGivenCaresses;
+		hungry = hungry - (numberOfGivenCaresses / 2);
 	}
 	
-	
-
+	public Boolean death() {
+		if (hungry < 0 || affection < 0) {
+			return true;
+		} else if (hungry > 100 || affection > 100) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
