@@ -90,7 +90,7 @@ public class Main {
 			case 2:
 				System.out.println(ENTER_DESIRED_VALUE);
 				int caresses = in.nextInt();
-				tama.giveCookies(caresses);
+				tama.giveCaresses(caresses);
 				break;
 			}
 			System.out.println(tama.toString());

@@ -19,7 +19,6 @@ public class Tamagotchi {
 	@Override
 	public String toString() {
 		return "--------------\n(⌐■_■)\n" + "Name: " + name + "\nHungry: " + hungry + "\nAffection: " + affection;
-		//return "Tamagotchi [name: " + name + ", hungry: " + hungry + ", affection: " + affection + "]";
 	}
 
 	public String getName() {
@@ -51,13 +50,13 @@ public class Tamagotchi {
 		affection = affection - (numberOfGivenCookies / 2);
 	}
 	
-	public void giveHand(int numberOfGivenCaresses) {
+	public void giveCaresses(int numberOfGivenCaresses) {
 		affection = affection + numberOfGivenCaresses;
 		hungry = hungry - (numberOfGivenCaresses / 2);
 	}
 	
 	public Boolean death() {
-		if (hungry < 0 || affection < 0) {
+		if (hungry <= 0 || affection <= 0) {
 			return true;
 		} else if (hungry > 100 || affection > 100) {
 			return true;
