@@ -1,5 +1,6 @@
 package en.finedust;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Week {
@@ -44,13 +45,19 @@ public class Week {
 		return fineDustWeekValue;
 	}
 	
-	public void setFineDustWeekValue(double[] _fineDustWeekValue) {
-		this.fineDustWeekValue = _fineDustWeekValue;
+	@Override
+	public String toString() {
+		return "Week [year=" + year + ", nWeek=" + nWeek + ", fineDustWeekValue=" + Arrays.toString(fineDustWeekValue)
+				+ "]";
 	}
-	
+
+	public void setFineDustWeekValue(double[] fineDustWeekValue) {
+		this.fineDustWeekValue = fineDustWeekValue;
+	}
+
 	private double maxValue() {
 		double max = fineDustWeekValue[0];
-		for (int i = 0; i <= fineDustWeekValue.length; i++) {
+		for (int i = 1; i < fineDustWeekValue.length; i++) {
 			if(fineDustWeekValue[i] > max) {
 				max = fineDustWeekValue[i];
 			}
@@ -71,7 +78,7 @@ public class Week {
 		if(x > 75) {
 			return MAX_VALUE_TOO_HIGH_ALLARM_MESSAGE;
 		}
-		return null;
+		return "No Allarm";
 	}
 	
 	public String averageValueAllarm() {
@@ -79,7 +86,7 @@ public class Week {
 		if(x > 50) {
 			return AVERAGE_VALUE_TOO_HIGH_ATTENTION_MESSAGE;
 		}
-		return null;
+		return "No Allarm";
 	}
 	
 	public void compileWeek() {
