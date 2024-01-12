@@ -45,7 +45,4 @@ public class Song {
 		
 		return "Song title: " + title + ", length: " + toMinutes();
 	}
-	
-	
-
 }
