@@ -92,7 +92,8 @@ public class Main {
 					if(nCookies < 20 || nCookies > 50) {
 						System.out.println(VALUE_TO_HIGH_OR_TO_LOW);
 					}
-				} while (nCookies < 20 || nCookies > 100);
+					nCookies = in.nextInt();
+				} while (nCookies < 20 || nCookies > 50);
 				for (int i = 0; i < tamaList.size(); i++) {
 					tamaList.get(i).increaseSatiety(nCookies);
 				}
@@ -115,7 +116,8 @@ public class Main {
 					if(nCaresses < 20 || nCaresses > 50) {
 						System.out.println(VALUE_TO_HIGH_OR_TO_LOW);
 					}
-				} while (nCaresses < 20 || nCaresses > 100);
+					nCaresses =in.nextInt();
+				} while (nCaresses < 20 || nCaresses > 50);
 				for (int i = 0; i < tamaList.size(); i++) {
 					tamaList.get(i).increaseSatisfaction(nCaresses);
 				}
