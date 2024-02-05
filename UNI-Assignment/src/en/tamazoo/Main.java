@@ -3,7 +3,6 @@ package en.tamazoo;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.jar.Attributes.Name;
 
 import en.tamagotchi.Menu;
 
