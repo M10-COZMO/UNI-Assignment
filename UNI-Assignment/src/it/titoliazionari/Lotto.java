@@ -40,9 +40,11 @@ public class Lotto {
 	}
 	
 	public void variazioneTitoli() {
-		for (int i = 0; i < listaTitoli.size(); i++) {
-			listaTitoli.get(i).variazioneValore();
-		}
+			listaTitoli.get(0).variazioneValore();
+			int nuovoValore = listaTitoli.get(0).getValore();
+			for(int i = 0; i < listaTitoli.size(); i++) {
+				listaTitoli.get(i).setValore(nuovoValore);
+			}
 	}
 
 	@Override

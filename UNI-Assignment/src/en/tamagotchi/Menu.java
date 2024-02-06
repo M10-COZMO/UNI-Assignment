@@ -39,13 +39,25 @@ public class Menu {
 	}
 	
 	public void printMenu() {
-		System.out.println(LINE);
+		for(int i = 0; i < title.length()+4; i++) {
+			System.out.print("-");
+		}
+		System.out.println();
+		//System.out.println(LINE);
 		System.out.println("| " + title + " |");
-		System.out.println(LINE);
+		for(int i = 0; i < title.length()+4; i++) {
+			System.out.print("-");
+		}
+		System.out.println();
+		//System.out.println(LINE);
 		for(int i = 0; i < voices.size(); i++) {
 			System.out.println(i + ". " + voices.get(i));
 		}
-		System.out.println(LINE);
+		for(int i = 0; i < title.length()+4; i++) {
+			System.out.print("-");
+		}
+		//System.out.println(LINE);
+		System.out.println();
 	}
 	
 	public void addVoice(String voice) {

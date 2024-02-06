@@ -42,8 +42,9 @@ public class UIManager {
 		menu.addVoice("no");
 		menu.addVoice("si");
 		do {
+			variazione.getPortafoglio().getInfo();
 			System.out.println(CHIEDI_PROSSIMA_GIORNATA);
-			
+			menu.printMenu();
 			int scelta = in.nextInt();
 			if (scelta == 0) {
 				proseguire = false;
@@ -67,7 +68,6 @@ public class UIManager {
 				portafoglio.getListaLotti().get(i).aggiungiTitolo(l);
 			}
 		}
-		portafoglio.stampaLotti();
 	}
 
 	private void inserisciNumeroLottiNelPortafoglio(Portafoglio portafoglio) {
@@ -79,7 +79,7 @@ public class UIManager {
 			Lotto l = new Lotto("Lotto "+i);
 			portafoglio.aggiungiLotto(l);
 		}
-		portafoglio.stampaLotti();
+		portafoglio.getInfo();
 	}
 
 	private void inserisciNomePortafolgio(Portafoglio portafoglio) {

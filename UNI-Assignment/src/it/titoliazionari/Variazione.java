@@ -33,4 +33,12 @@ public class Variazione {
 		System.out.println("Giornate passate dalla creazione del portafolgio: " + giornatePassate);
 		portafoglio.stampaLotti();
 	}
+
+	public Portafoglio getPortafoglio() {
+		return portafoglio;
+	}
+
+	public void setPortafoglio(Portafoglio portafoglio) {
+		this.portafoglio = portafoglio;
+	}
 }

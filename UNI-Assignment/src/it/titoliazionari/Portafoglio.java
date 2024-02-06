@@ -61,6 +61,11 @@ public class Portafoglio {
 	public ArrayList<Lotto> getListaLotti() {
 		return listaLotti;
 	}
+	
+	public void getInfo() {
+		stampaLotti();
+		System.out.println("Valore totale del Portafolgio: " + calcoloValoreTotale());
+	}
 
 	public void setListaLotti(ArrayList<Lotto> listaLotti) {
 		this.listaLotti = listaLotti;
