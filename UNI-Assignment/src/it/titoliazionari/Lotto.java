@@ -1,8 +1,9 @@
 package it.titoliazionari;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Lotto {
+public class Lotto implements Serializable {
 	
 	private String nome;
 	private ArrayList<Titolo> listaTitoli = new ArrayList<Titolo>();

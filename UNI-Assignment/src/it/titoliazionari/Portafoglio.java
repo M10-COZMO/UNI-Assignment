@@ -1,8 +1,9 @@
 package it.titoliazionari;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Portafoglio {
+public class Portafoglio implements Serializable {
 
 	private String nome;
 	private ArrayList<Lotto> listaLotti = new ArrayList<Lotto>();

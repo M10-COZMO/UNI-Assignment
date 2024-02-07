@@ -1,8 +1,9 @@
 package it.titoliazionari;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Titolo {
+public class Titolo implements Serializable{
 
 	private String nome;
 	private int valore;

@@ -1,6 +1,8 @@
 package it.titoliazionari;
 
-public class Variazione {
+import java.io.Serializable;
+
+public class Variazione implements Serializable{
 
 	private int giornatePassate;
 	private Portafoglio portafoglio;

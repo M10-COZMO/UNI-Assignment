@@ -1,8 +1,9 @@
 package it.titoliazionari;
 
+import java.io.*;
 import java.util.*;
-
 import en.tamagotchi.Menu;
+import it.unibs.fp.mylib.ServizioFile;
 
 public class UIManager {
 	
@@ -21,17 +22,34 @@ public class UIManager {
 	public void inizio() {
 		Portafoglio portafoglio = new Portafoglio();
 		Variazione variazione = new Variazione(GIORNO_INIZIALE, portafoglio);
+		File file = new File("myFile.id");
+		
+		if (file.exists()){
+			try {
+				variazione = (Variazione) ServizioFile.caricaSingoloOggetto(file);
+				portafoglio = variazione.getPortafoglio();
+			} catch (Exception e){
+				System.out.println("[ERROR]: C'è stato un errore durante l'aperura del file.");
+			} finally {
+				
+			}
+		}
+		
 		System.out.println(INIZIO_PROGRAMMA);
 		
-		inserisciNomePortafolgio(portafoglio);
-		
-		inserisciNumeroLottiNelPortafoglio(portafoglio);
-		
-		inserisciNumeroTitoliPerLotto(portafoglio);
+		if (!file.exists()) {
+			inserisciNomePortafolgio(portafoglio);
+			
+			inserisciNumeroLottiNelPortafoglio(portafoglio);
+			
+			inserisciNumeroTitoliPerLotto(portafoglio);
+		}
 		
 		giornate(variazione);
 		
 		System.out.println(PROGRAMMA_TERMINATO);
+		
+		ServizioFile.salvaSingoloOggetto(file, variazione);
 	}
 
 	private void giornate(Variazione variazione) {
