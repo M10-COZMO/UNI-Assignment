@@ -1,0 +1,4 @@
+Vittore Giocatore: 1
+Vittore PC: 1
+Patte: 3
+Statistica sulle vittorie: 0.2
