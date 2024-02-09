@@ -44,6 +44,10 @@ public class UIPartita {
 			}
 		} while (count < PARTITE_MASSIME);
 		
+		partitaTerminata();
+	}
+
+	private void partitaTerminata() {
 		System.out.println("Vittore Giocatore: "+ vittorieGiocatore);
 		System.out.println("Vittore PC: "+ vittoriePc);
 		System.out.println("Patte: "+ patte);
