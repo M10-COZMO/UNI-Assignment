@@ -57,7 +57,7 @@ public class LonelyHeart {
 	}
 	
 	private Boolean sameZodiacSign(LonelyHeart lonelyHeart) {
-		if (zodiacSign.equals(lonelyHeart.getZodiacSign())) {
+		if (getZodiacSign().equals(lonelyHeart.getZodiacSign())) {
 			return true;
 		} else {
 			return false;
